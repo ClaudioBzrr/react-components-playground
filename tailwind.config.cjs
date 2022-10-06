@@ -8,13 +8,9 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    require('daisyui'),
     require('tailwind-scrollbar')
   ],
   variants:{
     scrollbar:['dark']
-  },
-  daisyui:{
-    themes:['dark']
   }
 }

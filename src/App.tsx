@@ -1,34 +1,16 @@
-import { data } from "./fake-data"
-export function App() {
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import { Header } from './components/Header'
+import { routes } from './constants/Routes'
 
-  return (
-    <div className="w-[100vw] h-[100vh] flex flex-col items-center justify-center">
-      <div className="w-[60vw] h-[60vh]  overflow-x-auto ">
-        <table className="table table-zebra w-full table-fixed dark">
-          <thead>
-            <tr className="text-center">
-              <th>Título</th>
-              <th>Data de criação</th>
-              <th>Última atualização</th>
-              <th>Atendido por</th>
-              <th>Tempo decorrido</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              data.map(({title,created_at,updated_at,solver_name},index) =>(
-                <tr key={index} className="text-center">
-                  <td>{title}</td>
-                  <td>{created_at}</td>
-                  <td>{updated_at}</td>
-                  <td>{solver_name}</td>
-                  <td>1 dia</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-    </div>
+export function App(){
+  return(
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+          {
+            routes.map(({path,element},index) =><Route key={index} path={path} element={element}/>)
+          }
+        </Routes>
+      </BrowserRouter>
   )
 }
