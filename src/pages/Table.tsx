@@ -20,7 +20,7 @@ export function Table() {
           <tbody>
             {
               data.map(({created_at,finished_at,solver,title,updated_at},index) =>(
-                <tr key={index} className="text-center border-solid border-b-[1px] border-[#bc3a41ab] h-16">
+                <tr key={index} className="text-center border-solid border-b-[1px] border-[#fefefe9d] h-16">
                   <td>{title}</td>
                   <td>{created_at}</td>
                   <td>{updated_at}</td>
