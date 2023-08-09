@@ -10,7 +10,8 @@
     "lint": "eslint . --ext ts,tsx ",
     "lint:fix": "eslint . --ext ts,tsx --fix",
     "preview": "vite preview",
-    "start":"npm run preview"
+    "start":"npm run preview",
+    "fetch":"git stash --keep-index --include-untracked && git stash drop && git pull"
   },
   "dependencies": {
     "react": "^18.2.0",
